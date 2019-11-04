@@ -1,0 +1,36 @@
+{{>head}}
+
+<nav class="flex items-center justify-between flex-wrap bg-blue-500 p-2">
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow">
+            <a href="javascript:history.back()" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                Go Back
+            </a>
+            <a href="javascript:history.go(0)" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                Reload results
+            </a>
+        </div>
+    </div>
+</nav>
+
+<table class="text-left m-1" style="border-collapse:collapse">
+    <thead>
+    <tr>
+        {{#result.header}}
+            <th class="py-2 px-2 bg-grey-lighter font-sans font-regular text-sm text-grey border-b border-grey-light">{{.}}</th>
+        {{/result.header}}
+    </tr>
+    </thead>
+    <tbody>
+    {{#result.data}}
+        <tr class="hover:bg-blue-lightest">
+            {{#.}}
+                <td class="py-1 px-1 border-b font-sans text-sm border-grey-light text-left">
+                    {{.}}
+                </td>
+            {{/.}}
+        </tr>
+    {{/result.data}}
+    </tbody>
+
+</table>

@@ -1,0 +1,23 @@
+{{>head}}
+
+<table class="text-left m-1" style="border-collapse:collapse">
+    <thead>
+    <tr>
+        <th class="py-2 px-2 bg-grey-lighter font-sans font-regular text-sm text-grey border-b border-grey-light">Name</th>
+        <th class="py-2 px-2 bg-grey-lighter font-sans font-regular text-sm text-grey border-b border-grey-light">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#reports}}
+        <tr class="hover:bg-blue-lightest">
+            <td class="py-1 px-1 border-b font-sans text-sm border-grey-light text-left">
+                <a href="report/{{name}}">{{name}}</a>
+            </td>
+            <td class="py-1 px-1 border-b font-sans text-sm border-grey-light text-left">{{description}}</td>
+        </tr>
+    {{/reports}}
+    </tbody>
+</table>
+
+<!--{{>footer}}-->
+

@@ -1,0 +1,51 @@
+{{>head}}
+
+<nav class="flex items-center justify-between flex-wrap bg-blue-500 p-2">
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow">
+            <div class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                {{report.name}}
+            </div>
+            <div class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                |
+            </div>
+            <div class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                {{report.description}}
+            </div>
+        </div>
+    </div>
+</nav>
+<!--hide, if no params-->
+<table class="text-left m-1" style="border-collapse:collapse">
+    <thead>
+    <tr>
+        <th class="py-2 px-2 bg-grey-lighter font-sans font-regular text-sm text-grey border-b border-grey-light">Param</th>
+        <th class="py-2 px-2 bg-grey-lighter font-sans font-regular text-sm text-grey border-b border-grey-light">Value</th>
+    </tr>
+    </thead>
+    <tbody>
+        <form action="{{report.name}}/data" method="get">
+            {{#report.params}}
+            <tr class="hover:bg-blue-lightest">
+                <td class="py-1 px-1 border-b font-sans text-sm border-grey-light">{{name}}</td>
+                <td class="py-1 px-1 border-b font-sans text-sm border-grey-light text-left">
+                    <input type="text" name="{{name}}" {{#required}}required{{/required}}>
+                </td>
+            </tr>
+            {{/report.params}}
+            <tr>
+                <td>
+                    <input type="submit" name="execute" value="execute"
+                           class="inline-block border border-blue-500 rounded py-1 px-1 bg-blue-500 text-white text-sm
+                                  hover:bg-green-500">
+                </td>
+                <td>
+                    <input type="submit" name="csv" value="csv"
+                           class="inline-block border border-blue-500 rounded py-1 px-1 bg-blue-500 text-white text-sm
+                                 hover:bg-green-500">
+                </td>
+            </tr>
+        </form>
+    </tbody>
+
+</table>
