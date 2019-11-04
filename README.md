@@ -1,5 +1,5 @@
 # reporter
-reporter
+simple report web-application
 
 So once i was sitting at the job and discussing our reports that used Birt engine. I don't like it,
 so i wanted to create something that will show how reports should look like from my perspective and try something new.
